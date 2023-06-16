@@ -4,7 +4,8 @@
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto">
                 <a class="navbar-brand" href="{{url('/home')}}">
-                    <div class="brand-logo"></div>
+                    
+                    <img src="../../assets/images/logo/k2.png" style="height : 30px;width : 35px;">
                     <h2 class="brand-text mb-0">Kost-Able</h2>
                 </a>
                 </li>
@@ -37,7 +38,8 @@
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="{{url('/home')}}">
-                        <div class="brand-logo"></div>
+                        
+                        <img src="../../assets/images/logo/k2.png" style="height : 30px;width : 35px;">
                         <h2 class="brand-text mb-0">Kost-Able</h2>
                     </a>
                 </li>
@@ -94,7 +96,8 @@
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto">
             <a class="navbar-brand" href="{{url('/home')}}">
-                <div class="brand-logo"></div>
+                
+                <img src="../../assets/images/logo/k2.png" style="height : 30px;width : 35px;">
                 <h2 class="brand-text mb-0">Kost-Able</h2>
             </a>
             </li>

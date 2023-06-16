@@ -72,5 +72,8 @@ class User extends Authenticatable
     {
       return $this->hasMany(SimpanKamar::class)->limit(4);
     }
-
+    public function reviews()
+    {
+        return $this->hasMany(review::class);
+    }
 }

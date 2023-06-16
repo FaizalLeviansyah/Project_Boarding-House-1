@@ -48,6 +48,17 @@ class KamarController extends Controller
         throw new ErrorException($e->getMessage());
       }
     }
+    
+    public function editmap($slug)
+    {
+      try {
+        $result = $this->kamar->editmap($slug);
+        return $result;
+      } catch (ErrorException $e) {
+        throw new ErrorException($e->getMessage());
+      }
+    }
+
 
     /**
      * Store a newly created resource in storage.

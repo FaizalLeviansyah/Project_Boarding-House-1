@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+  
   <div class="card {{@$cari ? 'hidden' : ''}}">
     <div class="card-body" style="padding: 1%">
       <form action="{{url('filter-kamar')}}" method="GET">

@@ -20,7 +20,13 @@ class DatabaseSeeder extends Seeder
             AddRoleAdmin::class,
             RoleSeeder::class,
             IndoBankSeeder::class,
-            KamarSeeder::class
+            KamarSeeder::class,
+            KamarsSeeder::class,
+            TransactionsSeeder::class,
+            PaymentsSeeder::class,
+            ReviewSeeder::class
+            
         ]);
+        
     }
 }

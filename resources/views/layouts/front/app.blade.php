@@ -9,8 +9,8 @@
     <meta name="description" content="@yield('description')">
     <title>@yield('title')</title>
 
-    <link rel="apple-touch-icon" href="{{asset('assets/images/logo/papikos_logo.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/logo/papikos_logo.png')}}">
+    <link rel="apple-touch-icon" href="{{asset('assets/images/logo/kostable_logo.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/logo/kostable_logo.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     {{-- CSS --}}

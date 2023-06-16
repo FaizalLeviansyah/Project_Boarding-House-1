@@ -38,8 +38,10 @@ class FrontendsController extends Controller
         })->where('end_date_promo', '>=' ,carbon::now()->format('d F, Y'))->get();
         return view('front.index', \compact('kamar','promo'));
     }
+    
 
     // Show Kamar
+    
     public function showkamar($slug)
     {
         $kamar = kamar::with('province')
@@ -58,6 +60,7 @@ class FrontendsController extends Controller
 
         return view('front.show', compact('kamar','relatedKos','fav'));
     }
+    
 
     // Show semua kamar
     public function showAllKamar(Request $request)
@@ -103,6 +106,50 @@ class FrontendsController extends Controller
         $select['name']        = $request->nama_provinsi;
         $select['user_id']     = $request->user;
         return view('front.allCardContent', \compact('allKamar','select','provinsi','cari'));
+    }
+    public function showGogglemaps(Request $request)
+    {
+        $cari = $request->cari;
+        $allKamar = kamar::with(['promo' => function($a){
+            $a->where('end_date_promo', '>=' ,carbon::now()->format('d F, Y'));
+        }])
+        ->when(isset($cari), function($a) use($cari){
+            $a->whereHas('provinsi', function($q) use ($cari) {
+                $q->where('name', 'like', "%".$cari."%");
+            })
+            ->orwhereHas('regencies', function($q) use ($cari){
+                $q->where('name', 'like', "%".$cari."%");
+            })
+            ->orwhereHas('district', function($q) use ($cari){
+                $q->where('name', 'like', "%".$cari."%");
+            });
+
+            $a->orwhere('nama_kamar', 'like', "%".$cari."%");
+            $a->orwhereHas('favorite', function($q) use ($cari){
+                $q->where('user_id', 'like', "%".$cari."%")
+                ->where('user_id', Auth::id());
+            });
+        })
+        ->where('status',1)
+        ->where('is_active',1)
+        ->orderBy('created_at','DESC')
+        ->paginate(12);
+
+        $provinsi = Kamar::with([
+            'provinsi',
+            'promo' => function($a) {
+                $a->where('end_date_promo', '>=' ,carbon::now()->format('d F, Y'));
+            }
+        ])->select('province_id')
+        ->groupby('province_id')
+        ->where('status',1)
+        ->where('is_active',1)
+        ->get();
+        $select = [];
+        $select['jenis_kamar'] = $request->jenis_kamar;
+        $select['name']        = $request->nama_provinsi;
+        $select['user_id']     = $request->user;
+        return view('front.maps', \compact('allKamar','select','provinsi','cari'));
     }
 
     // Filter kamar
@@ -170,6 +217,13 @@ class FrontendsController extends Controller
       ->get();
       return view('front.allCardContent', \compact('allKamar','select','provinsi'));
     }
+    public function showKamarsOnMap()
+    {
+        $kamar = kamar::all();
+
+        return view('front.maps', compact('kamars'));
+    }
+
 
     // Show by kota
     public function showByKota(Request $request)

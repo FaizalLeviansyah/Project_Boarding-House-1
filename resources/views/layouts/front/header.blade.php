@@ -3,7 +3,8 @@
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item">
               <a class="navbar-brand" href="/">
-                <div class="brand-logo"></div>
+                
+                <img src="../../assets/images/logo/kostable_logo.png" style="height : 30px;width : 35px;">
                 <h2>Kost-Able</h2>
               </a>
             </li>
@@ -16,10 +17,15 @@
                     <ul class="nav navbar-nav ">
                         <li class="nav-item mobile-menu d-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ficon feather icon-menu"></i></a></li>
                         <li class="mr-2 d-none d-xl-block">
-                          <a href="" style="color: black" ><i class="feather icon-airplay" data-toggle="tooltip" data-placement="bottom" title="Download Aplikasi"></i> Kost Able </a>
+                          <a href="{{url('googlemaps')}}" style="color: black" ><i class="feather icon-airplay" data-toggle="tooltip" data-placement="bottom" ></i> Open Map Kost Able </a>
+
                         </li>
                         <li class="d-none d-xl-block">
                           <a href="{{url('show-all-room')}}" style="color: black"><i class="feather icon-calendar" data-toggle="tooltip" data-placement="top" title="Booking Kamar"></i> Book Kamar Kos</a>
+                        </li>
+                        
+                        <li class="d-none d-xl-block">
+                          <a href="{{url('dormitory-comparison')}}" style="color: black"><i class="feather icon-calendar" data-toggle="tooltip" data-placement="top" title="Bandingkan Kamar"></i> Bandingkan Kamar</a>
                         </li>
                     </ul>
                 </div>

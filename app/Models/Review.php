@@ -12,4 +12,11 @@ class Review extends Model
     protected $fillable =[
       'user_id','pemilik_id','kamar_id','rating','ulasan','transaksi_id'
     ];
+    public function reviews()
+    {
+        return $this->belongsTo(user::class);
+    }
 }
+
+
+

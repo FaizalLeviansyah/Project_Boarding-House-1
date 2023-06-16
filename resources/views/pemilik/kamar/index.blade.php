@@ -54,10 +54,14 @@
                         <a href="{{url('room', $item->slug)}}" class="btn btn-info btn-sm">Show</a>
                         <a href="{{route('kamar.edit', $item->slug)}}" class="btn btn-warning btn-sm">Edit</a>
                         <a data-id-kamar="{{$item->id}}" id="isAktifKamar" class="btn btn-danger btn-sm">{{$item->is_active == 0 ? 'Aktifkan' : 'Non-Aktifkan'}}</a>
+                        @if ($item-> latitude == null)
+                          <a href="{{route('kamar.editmap', $item->slug)}}" class="btn btn-primary btn-sm">Upload To Map</a>
+                        @endif
                         @if ($item->status == 0)
                             <span class="btn btn-primary btn-sm text-white">Review</span>
                         @endif
                       </td>
+                      
                     </tr>
                     @endforeach
                   </tbody>

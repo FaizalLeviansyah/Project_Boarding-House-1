@@ -29,7 +29,21 @@ class KamarSeeder extends Seeder
             'nama_bank' => 'BANK MANDIRI',
             'nama_pemilik' => 'Saefulloh Fatah P K',
             'is_active' => '1'
-            ], 
+            ],
+            [
+                'user_id' => 3,
+                'no_rekening' => 21212732,
+                'nama_bank' => 'BANK MANDIRI',
+                'nama_pemilik' => 'Mahaputra wijayanto',
+                'is_active' => '1'
+                ], 
+                [
+                    'user_id' => 5,
+                    'no_rekening' => 21232732,
+                    'nama_bank' => 'BANK MANDIRI',
+                    'nama_pemilik' => 'Mahaputra wijayanto',
+                    'is_active' => '1'
+                    ], 
             [
             'user_id' => 2,
             'no_rekening' => 21219283,
@@ -37,6 +51,7 @@ class KamarSeeder extends Seeder
             'nama_pemilik' => 'Faizal Leviansyah',
             'is_active' => '1'
             ]
+            
         ]);
         DB::table('kamars')->insert([
             [

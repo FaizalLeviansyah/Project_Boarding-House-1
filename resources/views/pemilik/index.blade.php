@@ -214,7 +214,7 @@
                         <h2 class="font-weight-bolder mb-1">
                           <div class="read-only-ratings" data-rateyo-read-only="true"></div>
                         </h2>
-                        <p style="font-size: 13px; color:lightcoral">Ratings: 7</p>
+                        <p style="font-size: 13px; color:lightcoral">Ratings: 4.5</p>
                     </div>
                 </div>
             </div>

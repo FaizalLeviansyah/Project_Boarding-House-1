@@ -30,7 +30,7 @@
                       <label class="col-form-label">Tanggal Berakhir</label>
                       <input type="text" class="form-control" value=" {{$review->end_date_sewa}}" disabled>
                   </div>
-
+                
                   <div class="col-sm-12">
                       <label class="col-form-label">Ulasan Kamar/kosan</label>
                       <textarea name="ulasan" class="form-control @error('ulasan') is-invalid @enderror" rows="4"></textarea>
@@ -40,6 +40,16 @@
                         </div>
                       @enderror
                   </div>
+                  <div class="col-sm-6">
+                      <label class="col-form-label">Rating Kamar/kosan(1-5)</label>
+                      <textarea name="rating" class="form-control @error('rating') is-invalid @enderror" rows="4"></textarea>
+                      @error('rating')
+                        <div class="invalid-feedback">
+                          <strong>{{ $message }}</strong>
+                        </div>
+                      @enderror
+                  </div>
+
                 </div>
                 <div class="form-group row ">
                     <div class="col-sm-10 mt-1">

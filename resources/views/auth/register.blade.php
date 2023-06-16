@@ -1,14 +1,14 @@
 @extends('layouts.auth')
 
 @section('title')
-  Pap!Kos - Register Page
+  Kost-able - Register Page
 @endsection
 @section('content')
 <div class="col-lg-6 col-12 p-0">
     <div class="card rounded-0 mb-0 px-2">
         <div class="card-header pb-1">
             <div class="card-title">
-                <h4 class="mb-0" style="text-align: center">Cari Kost dan Apartement Makin Mudah di Pap!Kos</h4>
+                <h4 class="mb-0" style="text-align: center">Cari Kost dan Apartement Makin Mudah di Kost-able</h4>
             </div>
         </div>
         <div class="card-content mb-2">

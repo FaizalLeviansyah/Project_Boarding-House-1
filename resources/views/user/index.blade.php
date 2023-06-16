@@ -74,7 +74,7 @@
               <h4 class="card-title text-white">Tingkatkan Point Kamu !</h4>
               <p class="card-text text-white">Point dapat digunakan untuk membayar tagihan kamar kamu loh.
               </p>
-              <p class="card-text"><small class="text-white">Posted by Pap!Kos</small></p>
+              <p class="card-text"><small class="text-white">Posted by Kostable</small></p>
             </div>
           </div>
         </div>
@@ -85,10 +85,10 @@
           <div class="card-content">
             <img class="card-img img-fluid" src="{{asset('assets/images/backgrounds/card_bg1.jpg')}}" style="max-height: 150px" alt="Card image">
             <div class="card-img-overlay overflow-hidden overlay-warning overlay-lighten-2">
-              <h4 class="card-title text-white">Ingat Kamar Ingat Pap!Kos.</h4>
-              <p class="card-text text-white">Cari kamar terbaik dengan ratusan tempat di seluruh Indonesia di Pap!Kos.
+              <h4 class="card-title text-white">Ingat Kamar Ingat Kostable.</h4>
+              <p class="card-text text-white">Cari kamar terbaik dengan ratusan tempat di seluruh Indonesia di Kostable.
               </p>
-              <p class="card-text"><small class="text-white">Posted by Pap!Kos</small></p>
+              <p class="card-text"><small class="text-white">Posted by Kostable</small></p>
             </div>
           </div>
         </div>

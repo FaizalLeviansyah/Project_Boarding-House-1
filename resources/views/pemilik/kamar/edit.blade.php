@@ -132,6 +132,16 @@
                         @enderror
                     </div>
 
+                    <div class="col-sm-3">
+                            <label class="col-form-label ">latitude</label>
+                            <input type="text" class="form-control" name="latitude" value="{{$edit->latitude}}" placeholder="latitude" autocomplete="off">
+                    </div>
+
+                    <div class="col-sm-3">
+                            <label class="col-form-label">longitude</label>
+                            <input type="text" class="form-control" name="longitude" value="{{$edit->longitude}}" placeholder="longitude" autocomplete="off">
+                    </div>
+
                     <div class="col-12">
                       <label class="col-form-label">Alamat Lengkap Kos</label>
                       <textarea name="alamat" class="form-control" id="alamat" rows="4" placeholder="Tulis lengkap alamat kos disini"> {{$edit->alamat->alamat ?? '-'}} </textarea>

@@ -29,6 +29,18 @@ class KamarService {
       throw new ErrorException($e->getMessage());
     }
   }
+  // Edit Map
+public function editmap($slug)
+{
+  try {
+    $edit = kamar::where('slug', $slug)->first();
+    $provinsi = Province::select('id','name')->get();
+    return view('pemilik.kamar.editmap', compact('edit','provinsi'));
+  } catch (ErrorException $e) {
+    throw new ErrorException($e->getMessage());
+  }
+}
+
 
   // Create Form
   public function create()
@@ -200,6 +212,9 @@ class KamarService {
       $kamar->desc        = $params->desc;
       $kamar->kategori    = $params->kategori;
       $kamar->book        = $params->book;
+      $kamar->latitude    = $params->latitude;
+      $kamar->longitude     = $params->longitude;
+      
       $kamar->save();
 
        if ($kamar) {

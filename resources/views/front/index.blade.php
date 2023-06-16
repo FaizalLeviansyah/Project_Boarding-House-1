@@ -1,6 +1,6 @@
 @extends('layouts.front.app')
 @section('description')
-  Kost Able, cari kos dan apartement makin mudah hanya di papikos. aplikasi pencari kos di indonesia.
+  Kost Able, cari kos dan apartement makin mudah hanya di kostable. aplikasi pencari kos di indonesia.
 @endsection
 @section('title')
   Selamat Datang di Kost Able

@@ -23,6 +23,7 @@ class MyRoomsController extends Controller
       $review = Transaction::with('kamar','review')->where('key',$key)->first();
       return view('user.kamar.ulasan', compact('review'));
     }
+      
 
     // Review Proses
     public function reviewProses(ReviewRequest $params,$key)
@@ -33,11 +34,13 @@ class MyRoomsController extends Controller
         'transaksi_id'=> $kamar->id,
         'pemilik_id'  => $kamar->kamar->user_id,
         'kamar_id'    => $kamar->kamar->id,
-        'rating'      => 4,
+        'rating'      => $params['rating'],
         'ulasan'      => $params['ulasan']
       ]);
 
-      Session::flash('success','Berhasil, Terima Kasih Sudah Memberikan Review.');
-      return redirect('/user/myroom');
+      $totalRating = Review::where('kamar_id', $kamar->kamar->id)->sum('rating');
+
+      Session::flash('success', 'Berhasil, Terima Kasih Sudah Memberikan Review.');
+      return redirect('/user/myroom')->with('totalRating', $totalRating);
     }
 }

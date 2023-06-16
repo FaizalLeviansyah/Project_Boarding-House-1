@@ -27,6 +27,14 @@
       <strong>{{ $message }}</strong>
     </div>
   @endif
+  <style>
+    .star-rating {
+  line-height:32px;
+  font-size:1.25em;
+}
+
+.star-rating .fa-star{color: yellow;}
+  </style>
 <div class="row">
   <div class="col-12">
     <h4 class="card-title">
@@ -137,10 +145,26 @@
               </div>
               <p class="hidden" id="url"> {{url('room', $kamar->slug)}} </p>
               <a onclick="copyToClipboard('#url')" id="eventshow" class="btn btn-outline-black btn-sm" data-toggle="tooltip" data-placement="top" title="Salin link" style="font-size: 12px; font-weight:bold; color:black"> <i class="feather icon-copy"></i>  Copy link</a>
-          </div>
+
+            </div>
         </div>
         <hr>
-
+        
+            <div class="row">
+              <div class="col-lg-12"> 
+                <div class="star-rating">
+                  @for ($i = 1; $i <= 5; $i++)
+                    @if ($i <= $kamar->reviews->avg('rating'))
+                    <span class="fa fa-star star-rating"></span>
+                    @else
+                    <span class="fa fa-star-o" ></span>
+                    @endif
+                  @endfor          
+                </div>
+              </div>
+            </div>
+            
+            
         <h3 style="font-weight: bold">Fasilitas</h3>
         <p style="font-size: 13px">
           <ol>
@@ -209,7 +233,48 @@
                 <img src="https://cdn.pixabay.com/photo/2018/08/28/13/29/avatar-3637561_1280.png" width="40px" height="40px" class="rounded">
                 <span class="font-weight-bold ml-1" style="font-size: 20px; color:black;">{{getNameUser($review->user_id)}}</span>
                 <p class="ml-5" style="font-size: 10px; margin-top:-2%;">{{monthyear($review->created_at)}} </p>
-                <span>{{$review->ulasan}}</span>
+                <div class="container">
+                  
+                  <div class="row">
+                    <div class="col-lg-12"> 
+                      <div class="star-rating">
+                        @if (($review->rating)==1)
+                        <span class="fa fa-star star-rating fa-star" data-rating="1"></span>
+                        <span class="fa fa-star-o" data-rating="2"></span>
+                        <span class="fa fa-star-o" data-rating="3"></span>
+                        <span class="fa fa-star-o" data-rating="4"></span>
+                        <span class="fa fa-star-o " data-rating="5"></span>
+                        @elseif (($review->rating)==2)
+                        <span class="fa fa-star star-rating fa-star" data-rating="1"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="2"></span>
+                        <span class="fa fa-star-o" data-rating="3"></span>
+                        <span class="fa fa-star-o" data-rating="4"></span>
+                        <span class="fa fa-star-o " data-rating="5"></span>
+                        @elseif (($review->rating)==3)
+                        <span class="fa fa-star star-rating fa-star" data-rating="1"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="2"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="3"></span>
+                        <span class="fa fa-star-o" data-rating="4"></span>
+                        <span class="fa fa-star-o " data-rating="5"></span>
+                        @elseif (($review->rating)==4)
+                        <span class="fa fa-star star-rating fa-star" data-rating="1"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="2"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="3"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="4"></span>
+                        <span class="fa fa-star-o " data-rating="5"></span>
+                        @elseif (($review->rating)==5)
+                        <span class="fa fa-star star-rating fa-star" data-rating="1"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="2"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="3"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="4"></span>
+                        <span class="fa fa-star star-rating fa-star" data-rating="5"></span>
+                        @endif
+                      </div>
+                    </div>
+                  </div>
+                  {{$review->ulasan}}
+                </div>
+                <br>
               </div>
             @endforeach
       </div>

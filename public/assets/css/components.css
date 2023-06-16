@@ -746,7 +746,13 @@ body.fixed-footer footer.footer-dark {
   margin-top : 1.35rem;
 }
 .main-menu .navbar-header .navbar-brand .brand-logo {
-  background : url('../../assets/images/logo/papikos_logo.png') no-repeat;
+  background : url('../../assets/images/logo/kostable_logo.png') no-repeat;
+  background-position : -65px -54px;
+  height : 24px;
+  width : 35px;
+}
+.brand-logos {
+  background : url('../../assets/images/logo/kostable_logo.png') no-repeat;
   background-position : -65px -54px;
   height : 24px;
   width : 35px;
